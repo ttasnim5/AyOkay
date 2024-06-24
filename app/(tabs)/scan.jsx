@@ -1,6 +1,7 @@
 import { Image, Text, SafeAreaView } from 'react-native'
 import React from 'react'
 import { icons } from '../../constants'
+import ProductScanner from '../search/productscanner.jsx'
 
 const Scan = () => {
   return (
@@ -19,6 +20,9 @@ const Scan = () => {
       <Text className="text-forest text-sm font-pbold mb-5 text-center px-5 py-5">
         Scan your product now to find out!
       </Text>
+
+      <ProductScanner />
+
     </SafeAreaView>
   )
 }
