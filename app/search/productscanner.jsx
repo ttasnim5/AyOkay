@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
+import { useNavigation } from '@react-navigation/native'
 
 const ProductScanner = () => {
+  
+  const navigation = useNavigation();
+
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
   const [barcodeData, setBarcodeData] = useState('');
@@ -14,6 +18,13 @@ const ProductScanner = () => {
       setHasPermission(status === 'granted');
     })();
   }, []);
+
+  useEffect(() => {
+    (async () => {
+      console.log(`Barcode: ${barcodeData}`);
+      navigation.navigate('companycard', {barcode: barcodeData});
+    })();
+  }, [barcodeData]); // Only re-run the effect if count changes
 
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);

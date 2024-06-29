@@ -1,9 +1,20 @@
 import { SafeAreaView } from "react-native-safe-area-context";
 import { View, Text, Image, FlatList, ImageBackground } from "react-native";
 import { images } from "../../constants";
+import { useRoute } from '@react-navigation/native';
+
 
 const CompanyCard = () => {
-const data = [{company: 'jp morgan', crime: 'money laundering'}];
+  const route = useRoute();
+  const { barcode } = route.params; 
+  // Once barcode changes we can call our endpoint with axios
+ 
+const data = [{
+  product: 'meth',
+  description: 'literal drugs',
+  company: 'jp morgan', 
+  crime: 'money laundering',
+ }]; // Hard coded values for testing.
 
   return (
     <SafeAreaView className="bg-offwhite h-full">
@@ -16,8 +27,21 @@ const data = [{company: 'jp morgan', crime: 'money laundering'}];
             <Text className="font-psemibold text-sm text-sage px-3 mb-3">
                 Here's what we found:
             </Text>
+            
             <Text className="font-plight text-sm text-forest px-5">
-                {item.crime}
+                Barcode: {barcode}
+            </Text>
+
+            <Text className="font-plight text-sm text-forest px-5">
+                Product: {item.product}
+            </Text>
+
+            <Text className="font-plight text-sm text-forest px-5">
+                Manufacturer: {item.company}
+            </Text>
+
+            <Text className="font-plight text-sm text-forest px-5">
+                Crimes of Company: {item.crime}
             </Text>
           </View>
         )}
