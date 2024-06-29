@@ -26,7 +26,9 @@ const PopularCompanies = () => {
           <FlatList 
             scrollEnabled={false}
             data={data}
-            keyExtractor={(item) => item.$id}
+            keyExtractor={(item) => {
+              return item.id;
+            }}
             renderItem={({ item }) => (
               <StoryCard
                 company={item.company}

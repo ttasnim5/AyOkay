@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
+import GetApiData from '../../components/getapidata';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 
 const ProductScanner = () => {
@@ -50,8 +51,13 @@ const ProductScanner = () => {
       {barcodeData ? (
         <View style={styles.result}>
           <Text style={styles.barcodeText}>Scanned Barcode: {barcodeData}</Text>
+          
+          <GetApiData barcode_number={barcodeData} />
         </View>
-      ) : <Text></Text>}
+        
+      ) : 
+        <View></View>
+      }
     </View>
   );
 };
