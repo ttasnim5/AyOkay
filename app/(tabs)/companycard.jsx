@@ -8,12 +8,11 @@ import axios from 'axios';
 const CompanyCard = () => {
   const route = useRoute();
   const { barcode } = route.params; 
-  // Once barcode changes we can call our endpoint with axios
 
   const [product, setProduct] = useState("");
   const [description, setDescription] = useState("");
   const [company, setCompany] = useState("");
-  const [crime, setCrime] = useState("");
+  const [crime, setCrime] = useState(""); // TODO: Connect it to Quoc's LLM
 
   useEffect(() => {
     const fetchData = async () => {
@@ -70,7 +69,7 @@ const data = [{
             </Text>
 
             <Text className="font-plight text-sm text-forest px-5">
-                Crimes of Company: {crime}
+                Crimes of Company: {description} 
             </Text>
           </View>
         )}
