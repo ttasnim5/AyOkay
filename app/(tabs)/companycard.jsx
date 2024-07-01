@@ -1,14 +1,43 @@
+import React, { useState, useEffect } from 'react';
 import { SafeAreaView } from "react-native-safe-area-context";
 import { View, Text, Image, FlatList, ImageBackground } from "react-native";
 import { images } from "../../constants";
 import { useRoute } from '@react-navigation/native';
-
+import axios from 'axios';
 
 const CompanyCard = () => {
   const route = useRoute();
   const { barcode } = route.params; 
   // Once barcode changes we can call our endpoint with axios
- 
+
+  const [product, setProduct] = useState("meth");
+  const [description, setDescription] = useState("literal drugs");
+  const [company, setCompany] = useState("lex corp");
+  const [crime, setCrime] = useState("money laundering");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        await axios.get(`https://us-central1-ayokay-8d564.cloudfunctions.net/api/lookup?barcodeNumber=${barcode}`)
+        .then(response => {
+          // Format JSON output
+          const res = JSON.stringify(response.data, null, 2).products[0]; // 2-space indentation
+          console.log('Formatted JSON data:', res);
+          // Update all fields
+          setProduct(res.title);
+          setDescription(res.description);
+          setCompany(res.manufacturer);
+        })       
+
+      } catch (error) {
+        console.error('Error fetching data from Firebase:', error);
+      }
+    };
+
+    fetchData();
+  }, [barcode]); // The effect will run when `itemId` changes
+
+
 const data = [{
   product: 'meth',
   description: 'literal drugs',
@@ -33,15 +62,15 @@ const data = [{
             </Text>
 
             <Text className="font-plight text-sm text-forest px-5">
-                Product: {item.product}
+                Product: {product}
             </Text>
 
             <Text className="font-plight text-sm text-forest px-5">
-                Manufacturer: {item.company}
+                Manufacturer: {company}
             </Text>
 
             <Text className="font-plight text-sm text-forest px-5">
-                Crimes of Company: {item.crime}
+                Crimes of Company: {crime}
             </Text>
           </View>
         )}
