@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import { useNavigation } from '@react-navigation/native'
@@ -6,6 +6,7 @@ import { useNavigation } from '@react-navigation/native'
 const ProductScanner = () => {
   
   const navigation = useNavigation();
+  const isInitialRender = useRef(true);
 
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
@@ -20,6 +21,11 @@ const ProductScanner = () => {
   }, []);
 
   useEffect(() => {
+    if (isInitialRender.current) {
+      isInitialRender.current = false;
+      return;
+    }
+    
     (async () => {
       console.log(`Barcode: ${barcodeData}`);
       navigation.navigate('companycard', {barcode: barcodeData});

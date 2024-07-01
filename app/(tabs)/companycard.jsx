@@ -10,10 +10,10 @@ const CompanyCard = () => {
   const { barcode } = route.params; 
   // Once barcode changes we can call our endpoint with axios
 
-  const [product, setProduct] = useState("meth");
-  const [description, setDescription] = useState("literal drugs");
-  const [company, setCompany] = useState("lex corp");
-  const [crime, setCrime] = useState("money laundering");
+  const [product, setProduct] = useState("");
+  const [description, setDescription] = useState("");
+  const [company, setCompany] = useState("");
+  const [crime, setCrime] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,12 +21,12 @@ const CompanyCard = () => {
         await axios.get(`https://us-central1-ayokay-8d564.cloudfunctions.net/api/lookup?barcodeNumber=${barcode}`)
         .then(response => {
           // Format JSON output
-          const res = JSON.stringify(response.data, null, 2).products[0]; // 2-space indentation
-          console.log('Formatted JSON data:', res);
+          
+          const res = JSON.parse(JSON.stringify(response.data, null, 2))["products"][0]; // 2-space indentation
           // Update all fields
-          setProduct(res.title);
-          setDescription(res.description);
-          setCompany(res.manufacturer);
+          setProduct(res["title"]);
+          setDescription(res["description"]);
+          setCompany(res["brand"]);
         })       
 
       } catch (error) {
