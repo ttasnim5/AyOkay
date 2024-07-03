@@ -29,12 +29,34 @@ const CompanyCard = () => {
         })       
 
       } catch (error) {
-        console.error('Error fetching data from Firebase:', error);
+        console.error('Error fetching Barcode data from Firebase:', error);
       }
     };
 
     fetchData();
   }, [barcode]); // The effect will run when `itemId` changes
+
+
+
+  useEffect(() => {
+    const fetchLLMData = async () => {
+      try {
+        const body = { input: company };
+        await axios.post(`https://us-central1-ayokay-8d564.cloudfunctions.net/api/llmprocess`, body)
+        .then(response => {
+          // Format JSON output
+          const res = JSON.parse(JSON.stringify(response.data, null, 2))["output"];
+          // Update all fields
+          setCrime(res);
+        })       
+
+      } catch (error) {
+        console.error('Error fetching LLM data from Firebase:', error);
+      }
+    }
+
+    fetchLLMData();
+  }, [company])
 
 
 const data = [{
@@ -69,7 +91,7 @@ const data = [{
             </Text>
 
             <Text className="font-plight text-sm text-forest px-5">
-                Crimes of Company: {description} 
+                Crimes of Company: {crime} 
             </Text>
           </View>
         )}
