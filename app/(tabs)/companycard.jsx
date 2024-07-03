@@ -25,7 +25,12 @@ const CompanyCard = () => {
           // Update all fields
           setProduct(res["title"]);
           setDescription(res["description"]);
-          setCompany(res["brand"]);
+          if (res["brand"] != ""){
+            setCompany(res["brand"]);
+          }
+          else {
+            setCompany(res["manufacturer"]);
+          }
         })       
 
       } catch (error) {
