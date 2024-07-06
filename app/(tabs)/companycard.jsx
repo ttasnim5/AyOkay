@@ -91,9 +91,7 @@ const data = [{
               </Text>
               <Text>{' '}</Text>
               <Text className="font-plight text-sm text-forest px-5">
-                <Markdown>
                 {barcode}
-                </Markdown>
               </Text>
             </Text>
 
