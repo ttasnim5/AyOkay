@@ -65,6 +65,7 @@ const CompanyCard = () => {
 
 
 const data = [{
+  barcode: '000000000000',
   product: 'meth',
   description: 'literal drugs',
   company: 'jp morgan', 
