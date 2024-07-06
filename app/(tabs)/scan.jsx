@@ -2,12 +2,14 @@ import { Image, Text, SafeAreaView, View, Button } from 'react-native'
 import React from 'react'
 import { icons } from '../../constants'
 import ProductScanner from '../search/productscanner.jsx'
+import { ScrollView } from 'react-native'
 
 const Scan = () => {
 
 
   return (
-    <SafeAreaView className="bg-lightgreen h-full justify-center items-center px-5 py-5">
+    <SafeAreaView className="bg-offwhite h-full justify-center items-center">
+    <ScrollView>
       <Text className="text-forest text-sm font-plight text-center mt-5 mb-5">
         What skeletons are in this company's closet?
       </Text>
@@ -18,6 +20,7 @@ const Scan = () => {
 
       <ProductScanner />
 
+    </ScrollView>
     </SafeAreaView>
   )
 }
