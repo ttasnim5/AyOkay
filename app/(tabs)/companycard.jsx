@@ -82,22 +82,45 @@ const data = [{
             <Text className="font-psemibold text-sm text-sage px-3 mb-3">
                 Here's what we found:
             </Text>
+
+            <Text className="px-5 mb-2">
+              <Text className="font-pmedium text-sm text-sage">
+                  Barcode: 
+              </Text>
+              <Text>{' '}</Text>
+              <Text className="font-plight text-sm text-forest px-5">
+                {barcode}
+              </Text>
+            </Text>
+
+            <Text className="px-5 mb-2">
+              <Text className="font-pmedium text-sm text-sage">
+                  Product: 
+              </Text>
+              <Text>{' '}</Text>
+              <Text className="font-plight text-sm text-forest px-5">
+                {product}
+              </Text>
+            </Text>
+
+            <Text className="px-5 mb-2">
+              <Text className="font-pmedium text-sm text-sage">
+                  Manufacturer: 
+              </Text>
+              <Text>{' '}</Text>
+              <Text className="font-plight text-sm text-forest px-5">
+                {company}
+              </Text>
+            </Text>
+
+            <Text className="font-pmedium text-sm text-center text-sage">
+                  Crimes of Company:
+            </Text>
+
+            <Text className="font-plight text-sm text-forest px-5">
+                {crime}  
+            </Text>
             
-            <Text className="font-plight text-sm text-forest px-5">
-                Barcode: {barcode}
-            </Text>
-
-            <Text className="font-plight text-sm text-forest px-5">
-                Product: {product}
-            </Text>
-
-            <Text className="font-plight text-sm text-forest px-5">
-                Manufacturer: {company}
-            </Text>
-
-            <Text className="font-plight text-sm text-forest px-5">
-                Crimes of Company: {crime} 
-            </Text>
           </View>
         )}
         ListHeaderComponent={() => (
@@ -120,7 +143,7 @@ const data = [{
                 <View className="flex justify-center items-center flex-1 ml-3">
                   <Text
                     className="font-psemibold text-lg text-forest">
-                    {data[0].company}
+                    {company}
                   </Text>
                 </View>
               </View>

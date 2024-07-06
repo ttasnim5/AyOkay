@@ -18,7 +18,7 @@ const Home = () => {
             <View className="flex justify-between items-start flex-row mr-6">
               <View>
                 <Text className="font-pmedium text-sm text-black mt-3 mb-5">
-                  Welcome to Libel!
+                  Welcome to CorporaTea!
                 </Text>
                 <Text className="text-2xl font-psemibold text-forest mb-3">
                   Let's spill some corporate tea.
