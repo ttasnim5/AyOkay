@@ -4,6 +4,7 @@ import { View, Text, Image, FlatList, ImageBackground } from "react-native";
 import { images } from "../../constants";
 import { useRoute } from '@react-navigation/native';
 import axios from 'axios';
+import Markdown from 'react-native-markdown-display';
 
 const CompanyCard = () => {
   const route = useRoute();
@@ -90,7 +91,9 @@ const data = [{
               </Text>
               <Text>{' '}</Text>
               <Text className="font-plight text-sm text-forest px-5">
+                <Markdown>
                 {barcode}
+                </Markdown>
               </Text>
             </Text>
 
@@ -119,7 +122,9 @@ const data = [{
             </Text>
 
             <Text className="font-plight text-sm text-forest px-5">
-                {crime}  
+            <Markdown>
+                {crime} 
+            </Markdown> 
             </Text>
             
           </View>
