@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView } from "react-native-safe-area-context";
-import { View, Text, Image, FlatList, ImageBackground } from "react-native";
+import { View, Text, Image, FlatList, ImageBackground, StyleSheet } from "react-native";
 import { images } from "../../constants";
 import { useRoute } from '@react-navigation/native';
 import axios from 'axios';
 import Markdown from 'react-native-markdown-display';
+import { ScrollView } from 'react-native-web';
 
 const CompanyCard = () => {
   const route = useRoute();
-  const { barcode } = route.params; 
+  //const { barcode } = route.params; 
+  const { barcode } = route.params ? route.params : { barcode: '000000000' };
 
   const [product, setProduct] = useState("");
   const [description, setDescription] = useState("");
@@ -74,13 +76,14 @@ const data = [{
  }]; // Hard coded values for testing.
 
   return (
-    <SafeAreaView className="bg-offwhite h-full">
+    <SafeAreaView style={{flex:1}} className="bg-offwhite h-full" style={{flex: 1}}>
       
       <FlatList
+        style={{flex:1}}        
         data={data}
         keyExtractor={(item) => item.$id}
         renderItem={({ item }) => (
-          <View>
+          <View style={{flex:1}}>
             <Text className="font-psemibold text-sm text-sage px-3 mb-3">
                 Here's what we found:
             </Text>
@@ -115,16 +118,16 @@ const data = [{
               </Text>
             </Text>
 
-            <Text className="font-pmedium text-sm text-center text-sage">
-                  Crimes of Company:
+            <Text className="font-pmedium text-sm text-center text-sage mt-5">
+                  Known History of Company:
             </Text>
 
             <Text className="font-plight text-sm text-forest px-5">
-            <Markdown>
+              <Markdown style={mardownStyles}>
                 {crime} 
-            </Markdown> 
+              </Markdown> 
             </Text>
-            
+
           </View>
         )}
         ListHeaderComponent={() => (
@@ -167,4 +170,13 @@ const data = [{
   );
 };
 
+const mardownStyles = StyleSheet.create({
+  body: {
+    fontSize: 14,
+    fontFamily: 'Inter',
+    marginBottom: 10,
+    lineHeight: 20,
+    padding: 15
+  }
+})
 export default CompanyCard
