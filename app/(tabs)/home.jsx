@@ -1,6 +1,6 @@
 import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { RefreshControl, Text, View, ScrollView, ImageBackground } from "react-native";
+import { Text, View, ScrollView, ImageBackground } from "react-native";
 
 import { images } from "../../constants";
 import PopularCompanies from "../../components/PopularCompanies";
@@ -11,9 +11,12 @@ const Home = () => {
     <SafeAreaView className="flex:1 bg-offwhite h-full">
       <ScrollView> 
         <ImageBackground 
+          // welcome message with coffee background image
           source={images.teacupbg} 
           imageStyle= {{opacity:0.4}}
-          className="mb-2">
+          className="mb-2"
+        >
+
           <View className="flex my-6 px-4 space-y-6">
             <View className="flex justify-between items-start flex-row mr-6">
               <View>
@@ -30,7 +33,9 @@ const Home = () => {
 
           </ImageBackground>
 
-          <View className="flex justify-center items-center flex-row flex-1 mt-1 mb-2">
+          <View className="flex justify-center items-center flex-row flex-1 mt-1 mb-2"
+          // make colored border lines
+          >
                 <View style={{flex: 1, height: 1, backgroundColor: 'salmon'}} />
                 <View style={{flex: 1, height: 1, backgroundColor: '#7f886e'}} />
           </View>
@@ -48,7 +53,9 @@ const Home = () => {
                 <View style={{flex: 1, height: 1, backgroundColor: '#7f886e'}} />
           </View>
 
-          <PopularCompanies />
+          <PopularCompanies 
+          // generate story tiles of prominent companies
+          />
        </ScrollView>
     </SafeAreaView>
   );

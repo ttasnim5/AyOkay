@@ -1,6 +1,7 @@
 import { ActivityIndicator, Text, TouchableOpacity } from "react-native";
 
 const CustomButton = ({
+  // https://github.com/adrianhajdin/aora/blob/main/components/CustomButton.jsx
   title,
   handlePress,
   containerStyles,

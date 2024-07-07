@@ -1,11 +1,8 @@
-import { Image, Text, SafeAreaView, View, Button } from 'react-native'
+import { Text, SafeAreaView, ScrollView } from 'react-native'
 import React from 'react'
-import { icons } from '../../constants'
 import ProductScanner from '../search/productscanner.jsx'
-import { ScrollView } from 'react-native'
 
 const Scan = () => {
-
 
   return (
     <SafeAreaView className="bg-offwhite h-full justify-center items-center">
@@ -18,7 +15,9 @@ const Scan = () => {
         Scan your product now to find out!
       </Text>
 
-      <ProductScanner />
+      <ProductScanner 
+      // generate camera to scan barcode
+      />
 
     </ScrollView>
     </SafeAreaView>

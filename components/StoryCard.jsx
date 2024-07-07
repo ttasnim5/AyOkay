@@ -1,7 +1,7 @@
 import React from 'react'
 import { router } from 'expo-router';
 import { View, Text, TouchableOpacity, Image } from 'react-native'
-import { icons, images } from "../constants";
+import { images } from "../constants";
 
 const StoryCard = ({company, crime}) => {
   return (

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import { useNavigation } from '@react-navigation/native'
 
@@ -50,7 +50,6 @@ const ProductScanner = () => {
   return (
     <View style={styles.container}>
       {!scannerVisible && (
-        //<Button title={'Start Scanning'} onPress={() => setScannerVisible(true)} />
         <CustomButton
               title="Scan a product"
               containerStyles="w-[250px] h-[10px]"
@@ -66,7 +65,6 @@ const ProductScanner = () => {
         </View>
       )}
       {scanned && (
-        //<Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />
         <CustomButton
               title='Tap to Scan Again'
               containerStyles="w-[250px] h-[10px]"
@@ -74,18 +72,12 @@ const ProductScanner = () => {
         />
       )}
       {scannerVisible && (
-        //<Button title={'Stop Scanning'} onPress={() => setScannerVisible(false)} />
         <CustomButton
               title='Stop Scanning'
               containerStyles="w-[250px] h-[10px]"
               handlePress={() => setScannerVisible(false)}
         />
       )}
-      {/* {barcodeData ? (
-        <View style={styles.result}>
-          <Text style={styles.barcodeText}>Scanned Barcode: {barcodeData}</Text>
-        </View>
-      ) : <Text></Text>} */}
     </View>
   );
 };

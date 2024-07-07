@@ -5,7 +5,6 @@ import { images } from "../../constants";
 import { useRoute } from '@react-navigation/native';
 import axios from 'axios';
 import Markdown from 'react-native-markdown-display';
-import { ScrollView } from 'react-native-web';
 
 const CompanyCard = () => {
   const route = useRoute();
@@ -76,9 +75,10 @@ const data = [{
  }]; // Hard coded values for testing.
 
   return (
-    <SafeAreaView style={{flex:1}} className="bg-offwhite h-full" style={{flex: 1}}>
+    <SafeAreaView style={{flex:1}} className="bg-offwhite h-full">
       
       <FlatList
+        // output the barcode, product name, manufacturer, and history
         style={{flex:1}}        
         data={data}
         keyExtractor={(item) => item.$id}
@@ -130,6 +130,7 @@ const data = [{
 
           </View>
         )}
+        
         ListHeaderComponent={() => (
           <View className="flex flex-col items-center mb-7 mt-5">
             <ImageBackground 
@@ -155,7 +156,9 @@ const data = [{
                 </View>
               </View>
               </ImageBackground>
+
               <View className="flex justify-center items-center flex-row flex-1 mt-5">
+                
                 <View style={{flex: 1, height: 1, backgroundColor: 'salmon'}} />
                 <View style={{flex: 1, height: 1, backgroundColor: '#7f886e'}} />
               </View>

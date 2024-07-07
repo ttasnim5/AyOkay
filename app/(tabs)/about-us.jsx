@@ -8,7 +8,6 @@ const AboutUs = () => {
         <ScrollView>
         <View className="flex flex-col items-center px-4 mb-3 mt-5">
               <View className="flex justify-center items-center flex-row flex-1">
-
                 <View className="w-[100px] h-[100px] rounded-lg border border-salmon 
                 flex justify-center items-center p-0.5">
                     <Image
@@ -25,7 +24,9 @@ const AboutUs = () => {
                 </View>
               </View>
 
-              <View className="flex justify-center items-center flex-row flex-1 mt-4">
+              <View className="flex justify-center items-center flex-row flex-1 mt-4"
+              // make colored border lines
+              >
                 <View style={{flex: 1, height: 1, backgroundColor: '#36563e'}} />
                 <View style={{flex: 1, height: 1, backgroundColor: '#ffffff'}} />
               </View>
