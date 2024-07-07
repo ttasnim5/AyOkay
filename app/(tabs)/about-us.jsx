@@ -1,6 +1,6 @@
 import { Image, View, Text, SafeAreaView, ScrollView } from 'react-native'
 import React from 'react'
-import { icons, images } from '../../constants'
+import { images } from '../../constants'
 
 const AboutUs = () => {
   return (
@@ -8,7 +8,6 @@ const AboutUs = () => {
         <ScrollView>
         <View className="flex flex-col items-center px-4 mb-3 mt-5">
               <View className="flex justify-center items-center flex-row flex-1">
-
                 <View className="w-[100px] h-[100px] rounded-lg border border-salmon 
                 flex justify-center items-center p-0.5">
                     <Image
@@ -25,7 +24,9 @@ const AboutUs = () => {
                 </View>
               </View>
 
-              <View className="flex justify-center items-center flex-row flex-1 mt-4">
+              <View className="flex justify-center items-center flex-row flex-1 mt-4"
+              // make colored border lines
+              >
                 <View style={{flex: 1, height: 1, backgroundColor: '#36563e'}} />
                 <View style={{flex: 1, height: 1, backgroundColor: '#ffffff'}} />
               </View>
@@ -36,19 +37,25 @@ const AboutUs = () => {
             </View>
 
             <Text className="font-psemibold text-lg text-offwhite text-center mb-3">
-                Libel App
+                CorporaTea
             </Text>
 
-            <Text className="text-offwhite text-sm font-pregular text-center mb-5">
-                Our Libel Team is dedicated to delivering the truth behind all of our 
+            <Text className="text-offwhite text-sm font-psemibold text-center mb-5">
+                Our CorporaTea Team is dedicated to delivering the truth behind all of our 
                 purchases.
             </Text>
             
-            <Text className="text-offwhite text-sm font-plight mb-5 px-3 py-3">
-                Details about how we started and what we want for the future of this app 
-                and our world.
+            <Text className="text-offwhite text-sm font-plight text-center mb-2 px-3 py-3">
+                Our app works simply: scan your product by the barcode, and we will return to you
+                a history of that manufacturer's/brand's wrongdoings. Our mission is to help everyone be
+                more deliberate and conscientious about what they buy, and who exactly they are buying from.  
             </Text>
 
+            <Text className="text-offwhite text-sm font-plight text-center mb-2 px-3 py-3">
+                Our mission is to help everyone be more deliberate and conscientious about what 
+                they buy, and who exactly they are buying from.  
+            </Text>
+            
       </ScrollView>
     </SafeAreaView>
   )

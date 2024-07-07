@@ -1,6 +1,7 @@
 import { ActivityIndicator, Text, TouchableOpacity } from "react-native";
 
 const CustomButton = ({
+  // https://github.com/adrianhajdin/aora/blob/main/components/CustomButton.jsx
   title,
   handlePress,
   containerStyles,
@@ -13,7 +14,7 @@ const CustomButton = ({
       activeOpacity={0.7}
       className={
         `bg-salmon rounded-xl min-h-[62px] flex flex-row justify-center 
-        items-center ${containerStyles} ${
+        items-center mb-2 mt-2 ${containerStyles} ${
         isLoading ? "opacity-50" : ""
       }`}
       disabled={isLoading}
