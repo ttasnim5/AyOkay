@@ -14,21 +14,21 @@ Before running this app, make sure you have the following installed:
 
 ## Installation
 1. Clone the repository:
-git clone https://github.com/ttasnim5/AyOkay
+`git clone https://github.com/ttasnim5/AyOkay`
 
 2. Install dependencies:
-`npm install`
-`npx create-expo-app ./` 
-`npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar`
-`npm install expo-barcode-scanner`  
-`npm install nativewind`
-`npm install --save-dev tailwindcss@3.3.2` 
-`npx tailwindcss init`    
-`npm install -S react-native-markdown-display`  
+* `npm install`
+* `npx create-expo-app ./` 
+* `npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar`
+* `npm install expo-barcode-scanner` 
+* `npm install nativewind`
+* `npm install --save-dev tailwindcss@3.3.2` 
+* `npx tailwindcss init`    
+* `npm install -S react-native-markdown-display`  
 
 ## Running the App
 1. Start the Expo development server:
-npx expo start
+`npx expo start`
 
 
 2. Use the Expo Go app on your mobile device to scan the QR code, or run on an emulator.
