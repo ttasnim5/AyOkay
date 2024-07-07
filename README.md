@@ -47,11 +47,11 @@ Before running this app, make sure you have the following installed:
 
 ## Contributing
 This project was developed by a team of three people:
-Quoc Anh Nguyen
-Swen Tang
-Tahsin Tasnim
+* Quoc Anh Nguyen
+* Swen Tang
+* Tahsin Tasnim
 
 ## Contact
-anhnguyen199819981998@gmail.com
-sventang1@gmail.com
-tahsintasnim6@gmail.com
+* anhnguyen199819981998@gmail.com
+* sventang1@gmail.com
+* tahsintasnim6@gmail.com
