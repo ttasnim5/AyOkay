@@ -1,4 +1,4 @@
-# Team AyOkay: CorporaTea Mobile App
+# Team AyOkay!: CorporaTea Mobile App
 
 ## Description
 CorporaTea enables the everyday consumer to identify the history of brands they purchase from. By simply scanning the barcode of a product, CorporaTea returns the product name, the company behind the product, and the history of social ills, lawsuits, settlements, etc with sources listed, if those events exist and are known.
@@ -18,18 +18,11 @@ Before running this app, make sure you have the following installed:
 
 2. Install dependencies:
 * `npm install`
-* `npx create-expo-app ./` 
-* `npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar`
-* `npm install expo-barcode-scanner` 
-* `npm install nativewind`
-* `npm install --save-dev tailwindcss@3.3.2` 
-* `npx tailwindcss init`    
-* `npm install -S react-native-markdown-display`  
+* `npm install -g expo-cli`
 
 ## Running the App
 1. Start the Expo development server:
 `npx expo start`
-
 
 2. Use the Expo Go app on your mobile device to scan the QR code, or run on an emulator.
 
